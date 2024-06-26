@@ -18,7 +18,7 @@ start,data_outw1,data_outw2,data_outw3,data_outx1,data_outx2,data_outx3
     integer w=0;                                        // for address of w
     
     output reg[3:0] data_outw1,data_outw2,data_outw3,data_outx1,data_outx2,data_outx3;          // output ports for giving out datas for matrix multiplication
-    wire x_lim,w_lim;                                                                           // for comparing x and w address with maximum value required
+    
     
    
     
