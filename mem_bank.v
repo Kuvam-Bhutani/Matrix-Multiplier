@@ -20,8 +20,7 @@ start,data_outw1,data_outw2,data_outw3,data_outx1,data_outx2,data_outx3
     output reg[3:0] data_outw1,data_outw2,data_outw3,data_outx1,data_outx2,data_outx3;          // output ports for giving out datas for matrix multiplication
     wire x_lim,w_lim;                                                                           // for comparing x and w address with maximum value required
     
-    comparator_greater_than gtw(4'd9,w,w_lim);                                                  // comparator module instantiated
-    comparator_greater_than gtx(4'd9,x,x_lim);
+   
     
 
     initial
@@ -31,12 +30,12 @@ start,data_outw1,data_outw2,data_outw3,data_outx1,data_outx2,data_outx3
 
     always@( posedge clk)   
          begin
-            if(load_w&& w_lim)
+             if(load_w&& w<9)
                 begin
                 w_mem[w]=data_in;
                 w=w+1;
                 end
-            else if(load_x && x_lim)
+             else if(load_x && x<9)
                 begin
                 x_mem[x]=data_in;
                 x=x+1; 
