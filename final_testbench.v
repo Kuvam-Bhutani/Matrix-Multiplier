@@ -1,6 +1,3 @@
-`include "controller.v"
-`include "datapath.v"
-
 module testbench();
     reg[3:0] data_in;
     wire done;
