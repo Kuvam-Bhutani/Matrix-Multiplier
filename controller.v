@@ -12,7 +12,7 @@ module controller(start,clk,done,unload1,unload2,unload3);
     always@(posedge clk)
         begin
           case(state)
-          S0: if(start)state<=S1;
+              S0: if(start)state<=S1;//state change occurs only when 'start' is enabled
           S1: state<=S2;
           S2: state<=S3;
           S3: done=1'b1;
