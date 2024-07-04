@@ -15,7 +15,7 @@ module matmul( data_w1,data_w2,data_w3,data_x1,data_x2,data_x3,clk,load,clear);
     MAC m22(data_w2,data_x2,o22,clk,load,clear);
     MAC m32(data_w3,data_x2,o32,clk,load,clear);
     
-    MAC m12(data_w1,data_x3,o13,clk,load,clear);
+    MAC m13(data_w1,data_x3,o13,clk,load,clear);
     MAC m23(data_w2,data_x3,o23,clk,load,clear);
     MAC m33(data_w3,data_x3,o33,clk,load,clear);
     
