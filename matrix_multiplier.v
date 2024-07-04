@@ -8,15 +8,15 @@ module matmul( data_w1,data_w2,data_w3,data_x1,data_x2,data_x3,clk,load,clear);
     wire [9:0] o11,o12,o13,o21,o22,o23,o31,o32,o33;
     
     MAC m11(data_w1,data_x1,o11,clk,load,clear);
-    MAC m12(data_w2,data_x1,o21,clk,load,clear);
-    MAC m13(data_w3,data_x1,o31,clk,load,clear);
+    MAC m21(data_w2,data_x1,o21,clk,load,clear);
+    MAC m31(data_w3,data_x1,o31,clk,load,clear);
     
-    MAC m21(data_w1,data_x2,o12,clk,load,clear);
+    MAC m12(data_w1,data_x2,o12,clk,load,clear);
     MAC m22(data_w2,data_x2,o22,clk,load,clear);
-    MAC m23(data_w3,data_x2,o32,clk,load,clear);
+    MAC m32(data_w3,data_x2,o32,clk,load,clear);
     
-    MAC m31(data_w1,data_x3,o13,clk,load,clear);
-    MAC m32(data_w2,data_x3,o23,clk,load,clear);
+    MAC m12(data_w1,data_x3,o13,clk,load,clear);
+    MAC m23(data_w2,data_x3,o23,clk,load,clear);
     MAC m33(data_w3,data_x3,o33,clk,load,clear);
     
     
